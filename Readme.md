@@ -12,7 +12,9 @@ npm i @types/express @types/cors @types/dotenv @types/multer -D
 npm i mongoose
 npm i @types/mongoose -D
 
-./node_modules/.bin/tsc --init
+./node_modules/.bin/tsc --init or npx tsc --init
 
+npm i bcryptjs jsonwebtoken
+npm i @types/bcryptjs @types/jsonwebtoken -D
 
 

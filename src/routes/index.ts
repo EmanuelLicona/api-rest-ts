@@ -1,7 +1,7 @@
-import itemRouter from './item';
-import generalRouter from './general';
+import carRouter from './car.route';
+import generalRouter from './general.route';
 
 export  default [
-  itemRouter,
+  carRouter,
   generalRouter
 ]
