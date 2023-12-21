@@ -12,7 +12,7 @@ const app = express() // Crea el servidor
 
 app.use(cors()) // Puede ser consumida por cualquier origen
 app.use(express.json()) // Permite leer JSON
-app.use(routes) // Rutas de la API en item
+app.use('/api/v1', routes) // Rutas de la API en item
 
 AppDataSource.initialize()
   .then(() => {

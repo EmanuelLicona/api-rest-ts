@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { HandleHttpError } from '../utils/error.handle'
-import { create, update, getAll, getOne, deleteOne } from '../services/car.services'
+import { create, update, getAll, getOne, deleteOne } from '../services/car.service'
 
 export const getAllCars = async (req: Request, res: Response) => {
   try {

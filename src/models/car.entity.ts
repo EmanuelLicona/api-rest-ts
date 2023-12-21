@@ -1,6 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
+import { Entity, Column } from "typeorm"
 import { BaseModel } from './base.entity'
-@Entity()
+@Entity({ name: 'cars' })
 export class Car extends BaseModel {
 
     @Column('text', { nullable: false })

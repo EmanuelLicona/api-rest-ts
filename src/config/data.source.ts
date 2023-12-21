@@ -9,7 +9,7 @@ export const AppDataSource = new DataSource({
   username: "root",
   password: "root",
   database: "prisma",
-  synchronize: false,
+  synchronize: true,
   logging: false,
   entities: [__dirname + '/../**/**/*.entity{.ts,.js}'],
   migrations: [__dirname + '/../migrations/**/*{.ts,.js}'],
