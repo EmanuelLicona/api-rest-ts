@@ -15,15 +15,18 @@ app.use(cors()) // Puede ser consumida por cualquier origen
 app.use(express.json()) // Permite leer JSON
 
 app.use('/api/v1', routes) // Rutas de la API en item
-app.use(generalRouter) 
+app.use(generalRouter)
+app.use(express.static('public'))
 
-AppDataSource.initialize()
-  .then(() => {
-    console.log('Data Source has been initialized!')
-  }).catch((err) => {
-    console.error('Error during Data Source initialization:', err)
-  })
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`)
 })
+
+AppDataSource.initialize()
+  .then(() => {
+    console.log('Data Base Up and Running!')
+  }).catch((err) => {
+    console.error('Error while connecting to Data Base:', err)
+  })
+
