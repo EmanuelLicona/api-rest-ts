@@ -7,11 +7,11 @@ export class User extends BaseModel  {
     email: string
 
     @Column( 'text', { nullable: false })
-    password: string
+    password?: string
 
-    @Column( 'varchar', { nullable: false , length: 100 })
+    @Column( 'varchar', { nullable: true , length: 100 })
     name: string
 
-    @Column( 'text', { nullable: true })
+    @Column( 'text', { nullable: true, default: 'This is a default description' })
     description: string
 }

@@ -3,6 +3,7 @@ import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import routes from './routes'
+import generalRouter from './routes/general.route'
 import { AppDataSource } from './config/data.source'
 
 // Configuración
@@ -12,7 +13,9 @@ const app = express() // Crea el servidor
 
 app.use(cors()) // Puede ser consumida por cualquier origen
 app.use(express.json()) // Permite leer JSON
+
 app.use('/api/v1', routes) // Rutas de la API en item
+app.use(generalRouter) 
 
 AppDataSource.initialize()
   .then(() => {

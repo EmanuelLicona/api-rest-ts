@@ -1,11 +1,15 @@
 import { Request, Response } from 'express'
 import { HandleHttpError } from '../utils/error.handle'
 import { create, update, getAll, getOne, deleteOne } from '../services/car.service'
+import { IRequestAuth } from '../interfaces/request.interface'
 
-export const getAllCars = async (req: Request, res: Response) => {
+export const getAllCars = async (req: IRequestAuth, res: Response) => {
   try {
     const resp = await getAll()
-    res.send(resp)
+    res.send({
+      data: resp,
+      idUser: req.user
+    })
   } catch (error) {
     HandleHttpError(res, 'ERROR_GET_ITEMS')
   }
